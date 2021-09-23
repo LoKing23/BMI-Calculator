@@ -1,4 +1,249 @@
-h1 {
-  font-size: 60px;
-  color: #fbc;
+:root {
+  --primary: #FFD366;
+  --dark: #424242;
+  --success: #86D73F;
+  --too-thin: #31BAF9;
+  --over-weight: #FF982D;
+  --fat: #FF6C03;
+  --so-fucking-fat: #FF1200;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+p {
+  font-size: 20px;
+}
+
+small {
+  font-size: 12px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 650px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main {
+  padding-top: 48px;
+  padding-bottom: 74px;
+  min-height: calc(100vh - 530px);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-gray {
+  background-color: #eee;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 56px 0;
+}
+
+.header h1 {
+  width: 15%;
+}
+
+.header .calculator-area {
+  width: 80%;
+}
+
+h1 img {
+  width: 100%;
+}
+
+.calculator-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.check-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: var(--primary);
+  border: #fff 3px solid;
+  border-radius: 50%;
+}
+
+.check-btn .reset-result {
+  position: absolute;
+}
+
+.check-btn p {
+  position: relative;
+}
+
+.check-btn small {
+  color: inherit;
+  font-size: 14px;
+  position: absolute;
+  bottom: -60%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.check-btn em {
+  color: inherit;
+  font-size: 32px;
+  line-height: 32px;
+  width: 64px;
+  font-style: initial;
+  position: absolute;
+  left: 200%;
+}
+
+.check-btn-thin {
+  color: var(--too-thin);
+  border: 6px solid var(--too-thin);
+}
+
+.check-btn-overWeight {
+  color: var(--over-weight);
+  border: 6px solid var(--fat);
+}
+
+.check-btn-gg {
+  color: var(--so-fucking-fat);
+  border: 6px solid var(--so-fucking-fat);
+}
+
+.check-btn-success {
+  color: var(--success);
+  border: 6px solid var(--success);
+}
+
+.input-area > * {
+  display: block;
+}
+
+.input-area label {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.input-area input {
+  width: 80%;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  font-size: 24px;
+  color: var(--dark);
+  padding: 8px 16px;
+  margin-bottom: 24px;
+}
+
+.BMI-list {
+  background-color: transparent;
+}
+
+.BMI-list li {
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  border-left: 6px solid #000;
+  background-color: #fff;
+}
+
+.BMI-list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.BMI-list div small {
+  margin-right: 8px;
+}
+
+.border-sucess {
+  border-color: var(--success) !important;
+}
+
+.border-thin {
+  border-color: var(--too-thin) !important;
+}
+
+.border-overWeight {
+  border-color: var(--over-weight) !important;
+}
+
+.border-fat {
+  border-color: var(--fat) !important;
+}
+
+.border-gg {
+  border-color: var(--so-fucking-fat) !important;
+}
+
+.footer {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.footer .logo-box {
+  width: 55px;
+  height: 55px;
+  margin-left: auto;
+  margin-right: auto;
 }

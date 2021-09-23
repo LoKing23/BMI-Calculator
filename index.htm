@@ -4,16 +4,83 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>帥哥回來到</title>
+  <title>BMI計算機</title>
   <link rel="stylesheet" href="css/all.css">
   <!-- 導入axios/fontAwesome  -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://kit.fontawesome.com/3a056adcda.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
+  <div class="bg-primary">
+    <div class="container header">
+      <h1>
+        <img src="https://hexschool.github.io/JavaScript_HomeWork/assets/BMICLogo.png" alt="">
+      </h1>
+      <div class="calculator-area">
+        <form class="input-area">
+          <label for="cm">身高cm</label> 
+          <input type="text" id="cm" placeholder="請輸入身高"> 
+          <label for="kg">體重kg</label> 
+          <input type="text" id="kg" placeholder="請輸入體重">
+        </form>
+        <div class="check-btn  check-btn-sucess">
+          <p>看結果<small></small><em></em></p>
+          <div class="reset-result"><img src="https://hexschool.github.io/JavaScript_HomeWork/assets/icons_loop.png" alt=""></div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gray">
+    <div class="container main">
+      <h2>BMI全記錄</h2>
+      <ul class="BMI-list">
+        <li class="border-sucess">
+          <p>理想</p>
+          <div>
+            <small>BMI</small>
+            <p>20.90</p>
+          </div>
+          <div>
+            <small>weight</small>
+            <p>70kg</p>
+          </div>
+          <div>
+            <small>height</small>
+            <p>180cm</p>
+          </div>
+          <small>9-24 2021 </small>
+        </li>
+
+        <li class="border-gg">
+          <p>過重</p>
+          <div>
+            <small>BMI</small>
+            <p>20.90</p>
+          </div>
+          <div>
+            <small>weight</small>
+            <p>70kg</p>
+          </div>
+          <div>
+            <small>height</small>
+            <p>180cm</p>
+          </div>
+          <small>9-24 2021 </small>
+        </li>
 
 
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-primary">
+    <div class="footer">
+      <div class="logo-box"><img src="https://hexschool.github.io/JavaScript_HomeWork/assets/BMICLogo.png" alt=""></div>
+    </div>
+  </div>
   <script src="js/all.js"></script>
 </body>
 </html>
