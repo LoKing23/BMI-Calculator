@@ -16,6 +16,11 @@
   color: var(--dark);
 }
 
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 h2 {
   font-size: 24px;
   text-align: center;
@@ -117,6 +122,25 @@ h1 img {
 
 .check-btn .reset-result {
   position: absolute;
+  width: 30px;
+  padding: 5px;
+  right: 8%;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: var(--success);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 2px var(--primary);
+          box-shadow: 0 0 0 2px var(--primary);
+}
+
+.check-btn .reset-result img {
+  margin-left: auto;
+  margin-top: auto;
+  width: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .check-btn p {
