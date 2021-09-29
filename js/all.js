@@ -42,7 +42,8 @@ function get_BMI_state(BMI){
 //Event
 //1 新增紀錄
 const btn = document.querySelector('.check-btn');
-btn.addEventListener('click',function(e){
+btn.addEventListener('click',click_event_addBMI);
+function click_event_addBMI(e){
 
   //抓input值，並存為物件
   const input = document.querySelectorAll('.input-area input');
@@ -71,13 +72,24 @@ btn.addEventListener('click',function(e){
   render_result_in_btn(BMI);
   //render list
   render_all_result_in_BMI_list(data);
-})
+  btn.removeEventListener('click',click_event_addBMI);
+}
 //2 reset紀錄
 const reset = document.getElementById('reset-result');
-reset.addEventListener('click',function(e){
+reset.addEventListener('click',click_event_reset);
+function click_event_reset(e){
+  //重置html
+  const checkBtn = document.querySelector('.check-btn');
+  checkBtn.setAttribute('class','check-btn');
+  const str = `
+    <p>看結果<small>BMI</small><em></em></p>
+    <div id="reset-result" class="d-none"><img src="https://hexschool.github.io/JavaScript_HomeWork/assets/icons_loop.png" alt=""></div> 
+  `
+  checkBtn.innerHTML = str;
 
-})
-
+  e.stopPropagation();
+  btn.addEventListener('click',click_event_addBMI);
+}
 //3 點擊list 刪除紀錄
 const listGroup = document.querySelector('.BMI-list');
 listGroup.addEventListener('click',function(e){
@@ -125,21 +137,19 @@ function render_result_in_btn(BMI){
   const result = document.createTextNode(BMI_result);
   const em = document.createElement('em');
   em.appendChild(result);
-  console.log(em);
   btnP.replaceChild(em,btnP.childNodes[2]);
   
 }
 //2 render list
-function render_result_in_BMI_list(height,weight){
+function render_result_in_BMI_list(height,weight,year_Month_Day){
   //寫進list+取得時間
   const BMI = BMI_calculate(height,weight);
   const BMI_state = get_BMI_state(BMI);
   if(height < 10){height *=  100;}
   
-  const time = new Date();
-  const year = time.getFullYear();
-  const month = time.getMonth() + 1;
-  const day = time.getDay();
+  const year = year_Month_Day.year;
+  const month = year_Month_Day.month;
+  const day = year_Month_Day.day;
 
   const listNode = document.createElement('li');
   let listNode_class = null;
@@ -184,7 +194,7 @@ function render_result_in_BMI_list(height,weight){
   const listGroup = document.querySelector('.BMI-list');
   listGroup.appendChild(listNode);
 }
-//3
+//3 
 function render_all_result_in_BMI_list(data){
 
   const listGroup = document.querySelector('.BMI-list');
@@ -193,7 +203,8 @@ function render_all_result_in_BMI_list(data){
   for (const obj of data) {
     let h = obj.height;
     let w = obj.weight;
-    render_result_in_BMI_list(h,w);
+    let t = obj.time;
+    render_result_in_BMI_list(h,w,t);
   }
 }
 
