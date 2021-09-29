@@ -88,25 +88,6 @@ h1{
   border: #fff 3px solid;
   border-radius: 50%;
  
- 
-  .reset-result{
-    position: absolute;
-    width: 30px;
-    padding: 5px;
-    right: 8%;
-    bottom: 0;
-    display: flex;
-    background-color: var(--success);
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--primary);
-    
-    img{
-      margin-left: auto;
-      margin-top: auto;
-      width: 80%;
-      object-fit: contain;
-    }
-  }
   p{
     position: relative;
   }
@@ -119,30 +100,87 @@ h1{
     transform: translateX(-50%);
   }
   em{
+    white-space: nowrap;
     color: inherit;
     font-size: 32px;
     line-height: 32px;
     width: 64px;
     font-style: initial;
     position: absolute;
-    left: 200%;
-  }
-  &-thin{
-    color: var(--too-thin);
-    border: 6px solid var(--too-thin);
-  }
-  &-overWeight{
-    color: var(--over-weight);
-    border: 6px solid var(--fat);
-  }
-  &-gg{
-    color: var(--so-fucking-fat);
-    border: 6px solid var(--so-fucking-fat);
+    left: 130px;
   }
 }
+.reset-result{
+  position: absolute;
+  width: 23px;
+  padding: 5px;
+  right: 8%;
+  bottom: -5%;
+  display: flex;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--primary);
+  img{
+    margin-left: auto;
+    margin-top: auto;
+    width: 80%;
+    object-fit: contain
+  }
+}
+.check-btn-success,
+.check-btn-thin,
+.check-btn-overWeight,
+.check-btn-gg,
+.check-btn-fat{
+  border: 6px solid #000;
+  p{
+    font-size: 32px;
+  }
+}
+
 .check-btn-success{
-  color: var(--success);
-  border: 6px solid var(--success);
+  border-color: var(--success);
+  p{
+    color: var(--success);
+  }
+  .reset-result{
+    background-color: var(--success);
+  }
+}
+.check-btn-thin{
+  border-color: var(--too-thin);
+  p{
+    color: var(--too-thin);
+  }
+  .reset-result{
+    background-color: var(--too-thin);
+  }
+}
+.check-btn-overWeight{
+  border-color: var(--over-weight);
+  p{
+    color: var(--over-weight);
+  }
+  .reset-result{
+    background-color: var(--over-weight);
+  }
+}
+.check-btn-fat{
+  border-color: var(--fat);
+  p{
+    color: var(--fat);
+  }
+  .reset-result{
+    background-color: var(--fat);
+  }
+}
+.check-btn-gg{
+  border-color: var(--so-fucking-fat);
+  p{
+    color: var(--so-fucking-fat);
+  }
+  .reset-result{
+    background-color: var(--so-fucking-fat);
+  }
 }
 .input-area{
   >*{
@@ -182,7 +220,10 @@ h1{
     }
   }
 }
-.border-sucess{
+.d-none{
+  display: none;
+}
+.border-success{
   border-color: var(--success) !important;
 }
 .border-thin{

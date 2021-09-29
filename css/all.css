@@ -120,29 +120,6 @@ h1 img {
   border-radius: 50%;
 }
 
-.check-btn .reset-result {
-  position: absolute;
-  width: 30px;
-  padding: 5px;
-  right: 8%;
-  bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: var(--success);
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 2px var(--primary);
-          box-shadow: 0 0 0 2px var(--primary);
-}
-
-.check-btn .reset-result img {
-  margin-left: auto;
-  margin-top: auto;
-  width: 80%;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .check-btn p {
   position: relative;
 }
@@ -158,33 +135,112 @@ h1 img {
 }
 
 .check-btn em {
+  white-space: nowrap;
   color: inherit;
   font-size: 32px;
   line-height: 32px;
   width: 64px;
   font-style: initial;
   position: absolute;
-  left: 200%;
+  left: 130px;
 }
 
-.check-btn-thin {
-  color: var(--too-thin);
-  border: 6px solid var(--too-thin);
+.reset-result {
+  position: absolute;
+  width: 23px;
+  padding: 5px;
+  right: 8%;
+  bottom: -5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 2px var(--primary);
+          box-shadow: 0 0 0 2px var(--primary);
 }
 
-.check-btn-overWeight {
-  color: var(--over-weight);
-  border: 6px solid var(--fat);
+.reset-result img {
+  margin-left: auto;
+  margin-top: auto;
+  width: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-.check-btn-gg {
-  color: var(--so-fucking-fat);
-  border: 6px solid var(--so-fucking-fat);
+.check-btn-success,
+.check-btn-thin,
+.check-btn-overWeight,
+.check-btn-gg,
+.check-btn-fat {
+  border: 6px solid #000;
+}
+
+.check-btn-success p,
+.check-btn-thin p,
+.check-btn-overWeight p,
+.check-btn-gg p,
+.check-btn-fat p {
+  font-size: 32px;
 }
 
 .check-btn-success {
+  border-color: var(--success);
+}
+
+.check-btn-success p {
   color: var(--success);
-  border: 6px solid var(--success);
+}
+
+.check-btn-success .reset-result {
+  background-color: var(--success);
+}
+
+.check-btn-thin {
+  border-color: var(--too-thin);
+}
+
+.check-btn-thin p {
+  color: var(--too-thin);
+}
+
+.check-btn-thin .reset-result {
+  background-color: var(--too-thin);
+}
+
+.check-btn-overWeight {
+  border-color: var(--over-weight);
+}
+
+.check-btn-overWeight p {
+  color: var(--over-weight);
+}
+
+.check-btn-overWeight .reset-result {
+  background-color: var(--over-weight);
+}
+
+.check-btn-fat {
+  border-color: var(--fat);
+}
+
+.check-btn-fat p {
+  color: var(--fat);
+}
+
+.check-btn-fat .reset-result {
+  background-color: var(--fat);
+}
+
+.check-btn-gg {
+  border-color: var(--so-fucking-fat);
+}
+
+.check-btn-gg p {
+  color: var(--so-fucking-fat);
+}
+
+.check-btn-gg .reset-result {
+  background-color: var(--so-fucking-fat);
 }
 
 .input-area > * {
@@ -240,7 +296,11 @@ h1 img {
   margin-right: 8px;
 }
 
-.border-sucess {
+.d-none {
+  display: none;
+}
+
+.border-success {
   border-color: var(--success) !important;
 }
 
