@@ -46,6 +46,7 @@ btn.addEventListener('click',function(e){
 
   //抓input值，並存為物件
   const input = document.querySelectorAll('.input-area input');
+  
   let height = input[0].value;
   input[0].value = "";
   let weight = input[1].value;
@@ -54,7 +55,14 @@ btn.addEventListener('click',function(e){
     height: height,
     weight: weight
   }
-  //處理localStorage儲存
+  //抓時間，存進物件
+  const time = new Date();
+  const timeObj = {};
+  timeObj.year = time.getFullYear();
+  timeObj.month = time.getMonth() + 1;
+  timeObj.day = time.getDay();
+  newObj.time = timeObj;
+  //物件存進localStorage
   const data = get_JSON_data_form_localStorage();
   data.push(newObj);
   set_data_in_localStorage(data);
@@ -62,12 +70,7 @@ btn.addEventListener('click',function(e){
   const BMI = BMI_calculate(height,weight);
   render_result_in_btn(BMI);
   //render list
-  const listGroup = document.querySelector('.BMI-list');
-  for (const item of data) {
-    let h = item.height;
-    let w = item.weight;
-    render_result_in_BMI_list(h,w);
-  }
+  render_all_result_in_BMI_list(data);
 })
 //2 reset紀錄
 const reset = document.getElementById('reset-result');
@@ -137,7 +140,7 @@ function render_result_in_BMI_list(height,weight){
   const year = time.getFullYear();
   const month = time.getMonth() + 1;
   const day = time.getDay();
-  console.log(day);
+
   const listNode = document.createElement('li');
   let listNode_class = null;
   switch(BMI_state){
@@ -183,12 +186,13 @@ function render_result_in_BMI_list(height,weight){
 }
 //3
 function render_all_result_in_BMI_list(data){
-  
+
+  const listGroup = document.querySelector('.BMI-list');
+  listGroup.innerHTML = "";
   data.reverse();
   for (const obj of data) {
     let h = obj.height;
     let w = obj.weight;
-    console.log(obj);
     render_result_in_BMI_list(h,w);
   }
 }
