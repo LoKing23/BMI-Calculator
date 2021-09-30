@@ -43,7 +43,7 @@ img{
 .main{
   padding-top: 48px;
   padding-bottom: 74px;
-  min-height: calc(100vh - 530px);
+  height: calc(100vh - 410px);
 }
 .bg-primary{
   background-color: var(--primary);
@@ -205,6 +205,11 @@ h1{
 }
 .BMI-list{
   background-color: transparent;
+  max-height: 230px;
+  overflow: hidden;
+  &:hover{
+    overflow-y: scroll;
+  }
   li{
     margin-bottom: 16px;
     display: flex;
