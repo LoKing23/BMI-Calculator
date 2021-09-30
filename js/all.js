@@ -78,14 +78,22 @@ function click_event_addBMI(e){
 const reset = document.getElementById('reset-result');
 reset.addEventListener('click',click_event_reset);
 function click_event_reset(e){
-  //重置html
+  //class change
   const checkBtn = document.querySelector('.check-btn');
   checkBtn.setAttribute('class','check-btn');
-  const str = `
-    <p>看結果<small>BMI</small><em></em></p>
-    <div id="reset-result" class="d-none"><img src="https://hexschool.github.io/JavaScript_HomeWork/assets/icons_loop.png" alt=""></div> 
-  `
-  checkBtn.innerHTML = str;
+  if(e.target.nodeName == 'IMG'){
+    e.path[1].setAttribute('class','d-none');
+  }if(e.target.nodeName == 'DIV'){
+    e.path[0].setAttribute('class','d-none');
+  }
+  //node change
+  const checkBtn_p = document.querySelector('.check-btn p');
+  const p_textNode = document.createTextNode('看結果');
+  checkBtn_p.replaceChild(p_textNode,checkBtn_p.childNodes[0]);
+  const small_elementNode = document.createElement('small');
+  checkBtn_p.replaceChild(small_elementNode,checkBtn_p.childNodes[1]);
+  const em_elementNode = document.createElement('em');
+  checkBtn_p.replaceChild(em_elementNode,checkBtn_p.childNodes[2]);
 
   e.stopPropagation();
   btn.addEventListener('click',click_event_addBMI);

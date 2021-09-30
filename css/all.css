@@ -146,6 +146,7 @@ h1 img {
 }
 
 .reset-result {
+  cursor: pointer;
   position: absolute;
   width: 23px;
   padding: 5px;
@@ -172,6 +173,7 @@ h1 img {
 .check-btn-overWeight,
 .check-btn-gg,
 .check-btn-fat {
+  cursor: default;
   border: 6px solid #000;
 }
 

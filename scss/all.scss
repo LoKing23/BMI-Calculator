@@ -111,6 +111,7 @@ h1{
   }
 }
 .reset-result{
+  cursor: pointer;
   position: absolute;
   width: 23px;
   padding: 5px;
@@ -131,6 +132,7 @@ h1{
 .check-btn-overWeight,
 .check-btn-gg,
 .check-btn-fat{
+  cursor: default;
   border: 6px solid #000;
   p{
     font-size: 32px;
