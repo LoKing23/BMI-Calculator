@@ -211,6 +211,7 @@ h1{
     overflow-y: scroll;
   }
   li{
+    cursor: pointer;
     margin-bottom: 16px;
     display: flex;
     justify-content: space-between;

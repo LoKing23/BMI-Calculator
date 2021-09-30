@@ -276,6 +276,7 @@ h1 img {
 }
 
 .BMI-list li {
+  cursor: pointer;
   margin-bottom: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
