@@ -33,6 +33,7 @@ img{
   height: auto;
   vertical-align: middle;
 }
+
 .container{
   max-width: 650px;
   padding-left: 15px;
@@ -43,7 +44,7 @@ img{
 .main{
   padding-top: 48px;
   padding-bottom: 74px;
-  height: calc(100vh - 410px);
+  min-height: calc(100vh - 361px);
 }
 .bg-primary{
   background-color: var(--primary);
@@ -71,7 +72,7 @@ h1{
 .calculator-area{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .check-btn{
   display: flex;
@@ -200,6 +201,8 @@ h1{
     font-size: 24px;
     color: var(--dark);
     padding: 8px 16px;
+  }
+  input:nth-child(1){
     margin-bottom: 24px;
   }
 }
@@ -255,4 +258,20 @@ h1{
     margin-left: auto;
     margin-right: auto;
   }
+}
+.warning-text{
+  color: red;
+  font-size: 16px;
+  white-space: nowrap;
+  margin: 8px;
+  position: absolute;
+}
+.clearAllBMI{
+  margin-bottom: 8px;
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  background-color: var(--primary);
+  color: black;
+  border-color: #fff;
 }

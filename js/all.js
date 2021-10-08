@@ -1,5 +1,4 @@
 //Data、Event、View
-
 //Data
 //計算BMI
 function set_data_in_localStorage(JSON_data){
@@ -48,25 +47,20 @@ function click_event_addBMI(e){
   //抓input值，並存為物件
   const input = document.querySelectorAll('.input-area input');
   
-  let height = +input[0].value;
-  let weight = +input[1].value;
-  console.log(
-    `
-      h: ${height},
-      w: ${weight}
-      ${typeof(height)},
-      ${typeof(weight)},
-      ${isNaN(height)},
-      ${isNaN(weight)}
-    `
-  );
-  if(isNaN(height) || isNaN(weight)){
-    alert('請輸入數字');
+  let height = input[0].value;
+  let weight = input[1].value;
+  const warningText = document.querySelector('.warning-text');
+  if(height === "" || weight === ""){
+    warningText.textContent = "空值無法計算";
+    return;
+  }
+  if(isNaN(+height) || isNaN(+weight)){
+    warningText.textContent = "請輸入數字";
     input[0].value = "";
     input[1].value = "";
     return;
   }else if(height < 0 || weight < 0){
-    alert('請輸入正數');
+    warningText.textContent = "請輸入正數";
     input[0].value = "";
     input[1].value = "";
     return;
@@ -132,6 +126,11 @@ listGroup.addEventListener('click',function(e){
   data.splice(true_num,1);
   set_data_in_localStorage(data);
   render_all_result_in_BMI_list(data);
+  if(data.length){return}
+  else{
+    const clearBtn = document.querySelector('.clearAllBMI');
+    clearBtn.classList.remove('d-none');
+  }
 })
 //View
 //1 render btn
@@ -233,9 +232,9 @@ function render_result_in_BMI_list(height,weight,year_Month_Day,list_num){
   const listGroup = document.querySelector('.BMI-list');
   listGroup.appendChild(listNode);
 }
-//3 
+//3 render_all_result_in_BMI_list
 function render_all_result_in_BMI_list(data){
-
+  const clearBtn = document.querySelector('.clearAllBMI');
   const listGroup = document.querySelector('.BMI-list');
   listGroup.innerHTML = "";
   data.reverse();
@@ -245,8 +244,10 @@ function render_all_result_in_BMI_list(data){
     let t = obj.time;
     render_result_in_BMI_list(h,w,t,index);
   })
+  if(listGroup.innerHTML === ""){return}
+  else{clearBtn.classList.remove('d-none')}
+  
 }
-
 (function init(){
   if(!get_JSON_data_form_localStorage()){
     const data = [];
@@ -255,3 +256,11 @@ function render_all_result_in_BMI_list(data){
   const data = get_JSON_data_form_localStorage();
   render_all_result_in_BMI_list(data);
 }())
+//4 clear_all_BMI_list
+const clearBtn = document.querySelector('.clearAllBMI');
+clearBtn.addEventListener('click',function(e){
+  const BMIGroup = document.querySelector('.BMI-list');
+  BMIGroup.innerHTML = "";
+  set_data_in_localStorage([]);
+  this.classList.add('d-none');
+});

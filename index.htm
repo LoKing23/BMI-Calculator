@@ -19,15 +19,16 @@
       <div class="calculator-area">
         <form class="input-area">
           <label for="cm">身高cm</label> 
-          <input type="text" id="cm" placeholder="請輸入身高"> 
+          <input type="text" id="cm" placeholder="請輸入身高">    
           <label for="kg">體重kg</label> 
           <input type="text" id="kg" placeholder="請輸入體重">
+          <p class="warning-text"></p>
         </form>
+        
         <div class="check-btn">
           <p>看結果<small></small><em></em></p>
           <div id="reset-result" class="d-none"><img src="https://hexschool.github.io/JavaScript_HomeWork/assets/icons_loop.png" alt=""></div> 
         </div>
-        
       </div>
     </div>
   </div>
@@ -35,6 +36,7 @@
   <div class="bg-gray">
     <div class="container main">
       <h2>BMI全記錄</h2>
+      <button class="clearAllBMI d-none">全部刪除</button>
       <ul class="BMI-list">
       </ul>
     </div>
